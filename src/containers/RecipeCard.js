@@ -3,9 +3,8 @@ import { useParams } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import Spinner from 'react-bootstrap/Spinner';
 import { getRecipesError, getRecipes, getRecipesPending } from '../reducers/RecipesReducer';
-import fetchRecipesActions from '../api/spoonacular';
+import fetchRecipesActions from '../utils/spoonacular';
 import Recipe from '../components/Recipe';
 
 export const RecipeCard = ({ fetchRecipe, data }) => {
@@ -27,9 +26,7 @@ export const RecipeCard = ({ fetchRecipe, data }) => {
 
   if (pending) {
     return (
-      <div>
-        <Spinner animation="grow" />
-      </div>
+      <h1>...</h1>
     );
   }
   if (recipes.length === 1) {
@@ -37,9 +34,7 @@ export const RecipeCard = ({ fetchRecipe, data }) => {
   }
 
   return (
-    <div>
-      <Spinner animation="grow" />
-    </div>
+    <h1>...</h1>
   );
 };
 

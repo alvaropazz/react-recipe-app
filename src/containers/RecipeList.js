@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import Spinner from 'react-bootstrap/Spinner';
-import fetchRecipesActions from '../api/spoonacular';
+import fetchRecipesActions from '../utils/spoonacular';
 import { getRecipesError, getRecipes, getRecipesPending } from '../reducers/RecipesReducer';
 import { getRecipeType } from '../reducers/FilterReducer';
 import Display from '../components/Display';
@@ -41,17 +40,13 @@ export class RecipeList extends React.Component {
 
     if (pending) {
       return (
-        <div>
-          <Spinner animation="grow" />
-        </div>
+        <h1>...</h1>
       );
     }
 
     if (recipes.length < 2) {
       return (
-        <div>
-          <Spinner animation="grow" />
-        </div>
+        <h1>...</h1>
       );
     }
 
