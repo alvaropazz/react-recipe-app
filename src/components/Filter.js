@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Filter.css'
+import './Filter.css';
 
 const Filter = props => {
   const mealTypes = [

@@ -8,7 +8,7 @@ import {
   changeType,
 } from '../actions/index';
 
-const key = 'e58f966470464622b23fe6ed8e79d89d'
+const key = 'e58f966470464622b23fe6ed8e79d89d';
 
 const recipesType = async type => {
   const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?type=${type}&apiKey=${key}`);

@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import RecipeList from '../containers/RecipeList';
 import RecipeCard from '../containers/RecipeCard';
-import './App.css'
+import './App.css';
 
 const App = () => (
   <Router>

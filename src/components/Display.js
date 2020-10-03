@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import './Display.css'
+import './Display.css';
 
 const Display = ({ recipe }) => (
   <li>
@@ -10,7 +10,7 @@ const Display = ({ recipe }) => (
         <div>
           <img src={recipe.image} alt={recipe.title} />
         </div>
-        <h2>{recipe.title.toUpperCase()}</h2>
+        <h2 className="recipe-title">{recipe.title.toUpperCase()}</h2>
       </div>
     </Link>
   </li>
