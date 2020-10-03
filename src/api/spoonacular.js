@@ -1,0 +1,68 @@
+import {
+  fetchRecipesPending,
+  fetchRecipesSuccess,
+  fetchRecipesError,
+  fetchRecipeError,
+  fetchRecipePending,
+  fetchRecipeSuccess,
+  changeType,
+} from '../actions/index';
+
+const recipesType = async type => {
+  const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?type=${type}&apiKey=f48b01151d62432cb1902a6cbd7c2e8d`);
+
+  if (response.ok) return response.json();
+
+  throw new Error(response.status);
+};
+
+const recipeProps = async id => {
+  const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=f48b01151d62432cb1902a6cbd7c2e8d`);
+
+  if (response.ok) return response.json();
+
+  throw new Error(response.status);
+};
+
+const fetchRecipes = type => async dispatch => {
+  dispatch(fetchRecipesPending());
+  try {
+    const response = await recipesType(type);
+    const recipesData = await Promise.all(response.results);
+    const recipes = recipesData.map(data => ({
+      title: data.title,
+      image: data.image,
+      id: data.id,
+    }));
+    dispatch(fetchRecipesSuccess(recipes));
+    dispatch(changeType(type));
+    return response;
+  } catch (e) {
+    dispatch(fetchRecipesError(e));
+    return e;
+  }
+};
+
+const fetchRecipe = id => async dispatch => {
+  dispatch(fetchRecipePending());
+  try {
+    const response = await recipeProps(id);
+    const recipe = {
+      title: response.title,
+      summary: response.summary,
+      cuisines: response.cuisines,
+      image: response.image,
+      id: response.id,
+    };
+    dispatch(fetchRecipeSuccess(recipe));
+    return recipe;
+  } catch (e) {
+    dispatch(fetchRecipeError(e));
+    return e;
+  }
+};
+
+export default {
+  fetchRecipes,
+  fetchRecipe,
+};
