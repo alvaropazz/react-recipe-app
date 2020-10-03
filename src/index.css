@@ -4,6 +4,10 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 *,
@@ -18,5 +22,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  width: 500px;
+  background: #eef0f4;
+  border-radius: 10px;
+  box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #fff;
+  margin: 40px 0;
+  padding: 20px 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #330f0a;
+}
+
+img {
+  border-radius: 5px;
+  border: 1px solid #330f0a;
+  width: 400px;
 }

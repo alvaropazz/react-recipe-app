@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import './Display.css'
 
 const Display = ({ recipe }) => (
   <li>
     <Link to={`/recipe/${recipe.id}`}>
-      <div>
+      <div className="each-container">
         <div>
           <img src={recipe.image} alt={recipe.title} />
         </div>
-        <p>{recipe.title}</p>
+        <h2>{recipe.title.toUpperCase()}</h2>
       </div>
     </Link>
   </li>

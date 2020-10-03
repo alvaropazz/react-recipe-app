@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Filter.css'
 
 const Filter = props => {
   const mealTypes = [
@@ -22,15 +23,10 @@ const Filter = props => {
   const { onClick, category } = props;
   return (
     <div>
-      <h3>
-        Meal Type:
-        <span className="ml-2">
-          <select name="category" value={category} onChange={e => onClick(e)}>
-            <option value="">Select category</option>
-            {mealTypes.map(type => (<option key={type} value={type}>{type}</option>))}
-          </select>
-        </span>
-      </h3>
+      <select name="category" value={category} onChange={e => onClick(e)}>
+        <option value="">SELECT MEAL TYPE</option>
+        {mealTypes.map(type => (<option key={type} value={type}>{type}</option>))}
+      </select>
     </div>
   );
 };

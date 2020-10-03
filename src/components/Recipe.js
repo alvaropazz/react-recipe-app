@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
+import './Recipe.css'
 
 const Recipe = ({ recipe }) => (
-  <div>
+  <div class="recipe-container">
     <div>
       <img src={recipe.image} alt={recipe.title} />
     </div>
