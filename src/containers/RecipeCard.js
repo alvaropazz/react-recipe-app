@@ -26,7 +26,7 @@ export const RecipeCard = ({ fetchRecipe, data }) => {
 
   if (pending) {
     return (
-      <h1>...</h1>
+      <h1 className="waiting">...</h1>
     );
   }
   if (recipes.length === 1) {
@@ -34,7 +34,7 @@ export const RecipeCard = ({ fetchRecipe, data }) => {
   }
 
   return (
-    <h1>...</h1>
+    <h1 className="waiting">...</h1>
   );
 };
 

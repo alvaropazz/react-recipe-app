@@ -40,13 +40,13 @@ export class RecipeList extends React.Component {
 
     if (pending) {
       return (
-        <h1>...</h1>
+        <h1 className="waiting">...</h1>
       );
     }
 
     if (recipes.length < 2) {
       return (
-        <h1>...</h1>
+        <h1 className="waiting">...</h1>
       );
     }
 
