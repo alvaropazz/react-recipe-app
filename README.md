@@ -20,7 +20,7 @@ Food Recipe App, created with Redux and React.
 
 ## App Demo
 
-[Live Demo]()
+[Live Demo](https://food-microverse.herokuapp.com/)
 
 ## Setup
 
