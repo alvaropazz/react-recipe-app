@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import { mount } from 'enzyme';
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
