@@ -1,0 +1,11 @@
+select {
+  border: 1px solid gray;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 40px 0 20px 0;
+}
+
+select:focus {
+  outline: none;
+}
