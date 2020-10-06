@@ -1,0 +1,15 @@
+.recipe-container {
+  margin-top: 40px;
+  width: 400px;
+}
+
+.each-description {
+  font-size: 14px;
+}
+
+.go-back {
+  font-size: 20px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #bfae48;
+}
